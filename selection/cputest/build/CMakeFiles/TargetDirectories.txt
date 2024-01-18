@@ -1,0 +1,3 @@
+/mnt/ssd1/rujie/pytorch/C++/selection/cputest/build/CMakeFiles/selection_cpu.dir
+/mnt/ssd1/rujie/pytorch/C++/selection/cputest/build/CMakeFiles/edit_cache.dir
+/mnt/ssd1/rujie/pytorch/C++/selection/cputest/build/CMakeFiles/rebuild_cache.dir

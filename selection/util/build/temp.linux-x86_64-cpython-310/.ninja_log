@@ -1,0 +1,5 @@
+# ninja log v5
+0	15477	1679354890796968477	/mnt/ssd1/rujie/pytorch/C++/selection/selection/util/build/temp.linux-x86_64-cpython-310/pyramid.o	bbf843ed58174791
+1	43116	1679354918420406358	/mnt/ssd1/rujie/pytorch/C++/selection/selection/util/build/temp.linux-x86_64-cpython-310/pyramid_cuda.o	13ba3a90cba63a91
+0	15302	1679354934080087583	/mnt/ssd1/rujie/pytorch/C++/selection/selection/util/build/temp.linux-x86_64-cpython-310/cloudtobox.o	b7dc108809749299
+1	43701	1679354962479509275	/mnt/ssd1/rujie/pytorch/C++/selection/selection/util/build/temp.linux-x86_64-cpython-310/cloudtobox_cuda.o	362b18262a0cd7ae

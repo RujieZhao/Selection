@@ -1,0 +1,3 @@
+# ninja log v5
+0	15208	1679354394063014099	/mnt/ssd1/rujie/pytorch/C++/selection/selection/build/temp.linux-x86_64-cpython-310/selection.o	f4c6ddc65c04b730
+1	43371	1679354422230448816	/mnt/ssd1/rujie/pytorch/C++/selection/selection/build/temp.linux-x86_64-cpython-310/selection_cuda.o	14cbee75dab597b5

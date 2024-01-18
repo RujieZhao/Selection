@@ -1,0 +1,66 @@
+MODEL:
+  SELECBACKBONE:
+    ENABLED: False #True False
+    NAME: "build_att_backbone"
+  META_ARCHITECTURE:
+    "selection"
+  SELECTION:
+    STAGEFROZEN: True #False True
+    ALPHA: 2.
+    IOU_THRESHOLDS: [0.65]
+    ONEHOT: True
+    MASK_WEIGHT: 1.
+    DELTA_WEIGHT: 5.
+    CLS_WEIGHT: 1.
+    LV_WEIGHT: 1.
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone"#"build_resnet_backbone"
+    # if freeze is true, it should be set to 5(larger than 5 is ok)
+    FREEZE_AT: 2 #5  2
+    IS_EN: False
+    FL_EN: False
+    PATCH_SIZE: 4
+  #THe reason I put fpn here is I want to switch FL backbone for fure ablation study.
+  FPN:
+    IN_FEATURES: ["res2", "res3", "res4", "res5"]
+  RESNETS:
+    OUT_FEATURES: [ "res2", "res3", "res4", "res5" ]
+    #NORM: "BN"
+  ROI_BOX_HEAD:
+    NAME: "FastRCNNConvFCHead"
+    NUM_FC: 2
+    POOLER_RESOLUTION: 7
+  IShead:
+    layer: 3
+  FLhead:
+    FL_NUM: 4
+
+DATASETS:
+  TRAIN: ("coco_2017_train",)
+  TEST: ("coco_2017_train",) #("coco_2017_val",)
+
+SOLVER:
+  IMS_PER_BATCH: 1
+  #OPTIMIZER: "ADAM" #"ADAM"
+  BASE_LR: 2e-5 #1e-4
+  WEIGHT_DECAY: 1e-4 #0.0001
+  WARMUP_ITERS: 0
+  WARMUP_FACTOR: 1.0
+  STEPS: (4000000,) #(50000,255000)
+  MAX_ITER: 300000 #3000000  10000 300000 90000
+
+INPUT:
+  PREDATASET:
+    EN: True
+  #True False
+    DIR: "/ssd2/rujie/predataset/coco/coco_2017_trainpre_11_130min640/" #"/mnt/ssd2/rujie/predataset/coco/coco_2017_trainpre_11_130/"  test /coco_2017_trainpre_11_130min640
+  RESIZE: True
+  RANDOM_FLIP: "none"
+  MIN_SIZE_TRAIN: (640,) #(640,672,704,736,768,800)
+  MIN_SIZE_TEST: 640 #640
+VIS_PERIOD: 0
+OUTPUT_DIR: ./output_3kminbatch #./output_test ./output_300minbatch 3kminbatch
+VERSION: 2
+
+
+

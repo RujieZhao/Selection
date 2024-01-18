@@ -1,0 +1,13 @@
+_BASE_: "./Base_selection.yaml"
+MODEL:
+  GPU:
+    FL: 3
+    MT: "contr"
+    # how much distance for pixels sensitivity working.
+    # MA has to be an odd number
+    MA: 11 #21
+    # sensitivity between pixels which represents inherent property within human's visual system
+    DEL: 130 #110
+    RAT: (0.5,0.7,0.9)
+  PY:
+    MASK_TH: 0.85
